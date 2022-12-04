@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: nok <nok@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 17:26:39 by kvisouth          #+#    #+#              #
-#    Updated: 2022/11/30 15:21:32 by marvin           ###   ########.fr        #
+#    Updated: 2022/12/04 15:22:54 by nok              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,7 @@ SRCS = 	ft_strlen.c \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-
-SRCB =	ft_lstadd_back.c \
+		ft_lstadd_back.c \
 		ft_lstadd_front.c \
 		ft_lstclear.c \
 		ft_lstdelone.c \
@@ -56,6 +55,7 @@ SRCB =	ft_lstadd_back.c \
 		ft_lstmap.c \
 		ft_lstnew.c \
 		ft_lstsize.c \
+		ft_strndup.c
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
@@ -70,10 +70,6 @@ OBJB		= $(SRCB:.c=.o)
 $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
-#Ajoute / Creer 'libft.a' contenant les .o des bonus
-bonus:		$(OBJB)
-			$(AR) $(NAME) $(OBJB)
-
 all:		$(NAME)
 
 #Fait rm -rf pour tout les fichier .o
@@ -86,4 +82,4 @@ fclean:		clean
 
 re:			fclean $(NAME)
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re

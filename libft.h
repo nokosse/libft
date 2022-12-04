@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nok <nok@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:47:26 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/11/26 19:00:09 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:22:16 by nok              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strndup(const char *s, size_t n);
 
 #endif
