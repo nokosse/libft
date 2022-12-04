@@ -3,41 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nok <nok@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:50:04 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/11/30 16:59:08 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:46:37 by nok              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-**	Prend en parametre une lettre et la compare a char c 
-**	pour voir si c'est un separateur (1)
-*/
+static void	free_tab(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (i > 0)
+	{
+		free(s[i]);
+		i--;
+	}
+	free(s);
+}
 
 static int	is_sep(const char s, char c)
 {
 	if (s == c)
 		return (1);
 	return (0);
-}
-
-/*
-**  Retourne en int la longueur d'un mot.
-**	Parcours le mot et s'arrete des qu'il y a un separateur
-**	Enfait c'est un strnlen, ou n est le separateur.
-*/
-
-static size_t	ft_strnlen(const char *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0' && is_sep(s[i], c) == 0)
-		i++;
-	return (i);
 }
 
 /*
@@ -56,11 +48,8 @@ static size_t	strcnt(const char *s, char c)
 	{
 		while (is_sep(s[i], c) == 1 && s[i])
 			i++;
-		if (s[i])
-		{
+		if (s[i] != '\0')
 			cpt++;
-			i++;
-		}
 		while (is_sep(s[i], c) == 0 && s[i])
 			i++;
 	}
@@ -68,18 +57,25 @@ static size_t	strcnt(const char *s, char c)
 }
 
 /*
-**	Fonctionne comme strdup mais jusqua wdlen et non '\0'
-**	Enfait c'est un strndup, ou n est le separateur, encore. 
+**	Count the lenght of the word, then malloc it, then copy
+**	The word from *s to return a new char * containing the word.
+**	Giving that char * to ft_split who will put that word in the **strs.
+**	Similar to strndup but is is not taking a size_t but
+**	the separator. 
 */
 
-static char	*ft_strndup(const char *s, char c)
+static char	*put_word(const char *s, char c)
 {
 	int		wdlen;
 	char	*wd;
 	int		i;
+	int		x;
 
 	i = 0;
-	wdlen = ft_strnlen (s, c);
+	x = 0;
+	while (s[x] != '\0' && is_sep(s[x], c) == 0)
+		x++;
+	wdlen = x;
 	wd = malloc (wdlen * sizeof(char) + 1);
 	if (!wd)
 		return (NULL);
@@ -92,23 +88,6 @@ static char	*ft_strndup(const char *s, char c)
 	return (wd);
 }
 
-/*
-**	En gros le split comment il fonctionne:
-**	1. Il malloc la taille du tableau de tableau grace a notre
-**		fonction strcnt plus haut.
-**		On precise sizeof char car nos tableau de tableau seront des *char.
-**	2. Il parcours la chaine *s jusqua '\0', la base.
-**	3. Dans le while, il check si on est sur un separateur ou sur '\0'
-**		si oui il avance dans *s en incrementant le pointeur s.
-**	4. vu qu'on est plus sur un separateur grace au if precedent
-**		On est forcement sur un mot. Donc on strndup ce mot
-**		dans le 1er tableau de **split.
-**		Puis on passe au prochain tableau de **split en incrementant i.
-**	5. vu qu'on a deja strndup notre mot, il nous interesse plus
-**		donc on incremente s jusqu'a etre sur un separateur ou '\0'
-**	6. Enfin, il sort de la boucle et met NULL sur le dernier tab de tab.
-*/
-
 char	**ft_split(const char *s, char c)
 {
 	char	**strs;
@@ -116,17 +95,17 @@ char	**ft_split(const char *s, char c)
 
 	strs = malloc ((sizeof(char *) * (strcnt(s, c) + 1)));
 	if (!strs)
+	{
+		free_tab(strs);
 		return (NULL);
+	}
 	i = 0;
 	while (*s != '\0')
 	{
 		while (is_sep(*s, c) == 1 && *s)
 			s++;
 		if (*s)
-		{
-			strs[i] = ft_strndup(s, c);
-			i++;
-		}
+			strs[i++] = put_word(s, c);
 		while (is_sep(*s, c) == 0 && *s)
 			s++;
 	}
