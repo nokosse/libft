@@ -6,22 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:19:05 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:28 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:06:40 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	memcmp fait comme strncmp mais dans la memoire.
-**	Mais pourquoi on cast des unsigned char ?
-**	Car c'est un standard (ISO-C99) qui dit que :
-**
-**	The sign of a nonzero value returned by the comparison functions memcmp,
-**	strcmp, and strncmp is determined by the sign of the difference between
-**	the values of the first pair of characters (both interpreted as unsigned char)
-**	that differ in the objects being compared.
-*/
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -40,13 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// int	main (int ac, char **av)
-// {
-// 	if (ac == 2)
-// 	{
-// 		char s1[] = {-128, 0, 127, 0};
-// 		char s2[] = {0, 0, 127, 0};
-// 		printf("%d",ft_memcmp(s2, s1, atoi(av[1])));
-// 	}
-// }

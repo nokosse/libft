@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 11:09:47 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:21:46 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:05:25 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-
-// int	main (int ac, char **av)
-// {
-// 	if (ac == 2)
-// 	{
-// 		if (ft_isascii(atoi(av[1])) == 1)
-// 			printf("%s","oui");
-// 		else
-// 			printf("%s (mettre la valeur ASCII !)","non");
-// 	}
-// }

@@ -6,15 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 10:05:20 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:38 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:06:58 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	Dans la memoire, a partir de *s, met 'n' fois le caractere 'c'.
-*/
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -30,17 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-// int main(int ac, char **av)
-// {
-// 	if (ac == 2)
-// 	{
-// 		int n = atoi(av[1]);
-// 		printf("memset sur %d caracteres:\n",n);
-// 		char str[] = "yo les mec";
-// 		printf("%s\n",str);
-// 		ft_memset(str, 's', n);
-// 		printf("%s",str);
-// 		return (0);
-// 	}
-// }

@@ -6,16 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 10:36:31 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:25 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:06:34 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	En gros c'est comme un strchr mais vu qu'on manipule de la memoire
-**	et pas des str, ya des cast un peu de partout. 
-*/
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -32,15 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// int	main(int ac, char **av)
-// {
-// 	if (ac == 2)
-// 	{
-// 		size_t	size = (atoi(av[1]));
-// 		char	str[] = "test plusieurs lettres";
-// 		int		letter = 'u';
-// 		printf("%p\n",ft_memchr(str, letter, size));
-// 		printf("%p\n",memchr(str, letter, size));
-// 	}
-// }

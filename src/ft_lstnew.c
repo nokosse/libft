@@ -6,19 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:46:33 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:17 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:06:20 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	Alloue (avec malloc(3)) et renvoie un nouvel
-**	élément. La variable membre ’content’ est
-**	initialisée à l’aide de la valeur du paramètre
-**	’content’. La variable ’next’ est initialisée à
-**	NULL. 
-*/
 
 t_list	*ft_lstnew(void *content)
 {

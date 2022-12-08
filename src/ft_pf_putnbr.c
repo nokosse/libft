@@ -6,18 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:43:11 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:30:34 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:07:20 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-	The difference with the ft_put... of libft, is the type of the functions.
-	This one is an int, meanwhile the one of libft is a void.
-	Why ? Because we need to count how many characters we are writing
-	so ft_printf can return the exact number.
-*/
 
 int	ft_pf_putnbr(long int nb)
 {
@@ -38,9 +31,3 @@ int	ft_pf_putnbr(long int nb)
 		len += ft_pf_putchar(nb + 48);
 	return (len);
 }
-
-// int main (int ac, char **av)
-// {
-// 	(void)ac;
-// 	printf("\nNB : %d",ft_putnbr(atoi(av[1])));
-// }

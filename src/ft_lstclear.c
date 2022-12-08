@@ -6,19 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:56:01 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:04 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:05:57 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	Supprime et libère la mémoire de **lst et de tous les éléments
-**	qui suivent, à l’aide de ’del’ et de free(3)
-**	Enfin, le pointeur initial doit être mis à NULL.
-**	**lst : L'adresse du pointeur vers un element
-**	del : adresse de la fct. permettant de suppr. le contenu de l'element
-*/
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

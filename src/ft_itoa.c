@@ -6,15 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:13:31 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:21:53 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:05:38 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	Transforme un int en char. Doit gerer INT_MIN et INT_MAX et les negatifs.
-*/
 
 static int	get_int_len(int n)
 {
@@ -73,8 +69,3 @@ char	*ft_itoa(int nb)
 	strint = ft_putnbr(nb, strint);
 	return (strint);
 }
-
-// int	main(void)
-// {
-// 	printf("%s",ft_itoa(4242));
-// }

@@ -6,20 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:40:55 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:36 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:06:50 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	memmove agit comme memcpy.
-**	mais il gere le cas de chevauchement, qui arrive quand
-**	le bloc memoire *dest est plus grand que celui de *src.
-**	Selon le man, la copie dans ce cas de figure se passe
-**	comme si *src etait copier dans une zone temporaire, puis
-**	de temporaire vers *dest.
-*/
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

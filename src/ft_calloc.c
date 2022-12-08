@@ -6,18 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:01:59 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:21:40 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:04:42 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	calloc alloue un bloc memoire de la taille de nmemb * size 
-**	et remplis ce bloc par des 0 (des '\0'), d'ou ft_bzero.
-**	/!\ Retourne NULL si on essaie d'allouer SIZE_MAX * SIZE_MAX
-**	et si l'allocation echoue.
-*/
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

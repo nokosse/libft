@@ -6,17 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:39:17 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:30:32 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:07:14 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-	It convert our nbr (decimal) into a hex, writing it.
-	The last line is writing numbers superior to 10, which are
-	ABCDEF in hex. And it's turning the letter into caps or not.
-*/
 
 int	ft_pf_puthex(unsigned long nbr, char caps)
 {
@@ -37,11 +31,3 @@ int	ft_pf_puthex(unsigned long nbr, char caps)
 	}
 	return (len);
 }
-
-// int	main(int ac, char **av)
-// {
-// 	if (ac == 2)
-// 	{
-// 		printf("\nlen : %d\n",ft_puthex(atoi(av[1]),'X'));
-// 	}
-// }

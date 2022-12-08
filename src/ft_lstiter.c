@@ -6,17 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:21:47 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:09 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:06:05 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-/*
-**	Itère sur la liste *lst et applique la fonction f au contenu chaque élément.
-**	lst : L’adresse du pointeur vers un élément.
-**	f : L’adresse de la fonction à appliquer.
-*/
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
