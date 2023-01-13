@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putstr.c                                     :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 19:49:18 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 17:07:28 by kvisouth         ###   ########.fr       */
+/*   Created: 2022/12/12 10:43:17 by kvisouth          #+#    #+#             */
+/*   Updated: 2023/01/13 18:52:58 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_pf_putstr(char *s)
-{
-	int	i;
+# include <stdlib.h>
+# include <unistd.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <string.h>
+# include <stdint.h>
+# include <fcntl.h>
 
-	i = 0;
-	if (s != NULL)
-	{
-		while (s[i])
-		{
-			write (1, &s[i], 1);
-			i++;
-		}
-		return (i);
-	}
-	return (ft_pf_putstr("(null)"));
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_strjoin(const char *s1, const char *s2);
+
+#endif

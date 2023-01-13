@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:47:26 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/08 16:50:53 by kvisouth         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:46:17 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-
-//ft_printf
-int		ft_pf_putstr(char *s);
-int		ft_pf_putptr(unsigned long ptr);
-int		ft_pf_putnbr(long int nb);
-int		ft_pf_puthex(unsigned long nbr, char caps);
-int		ft_pf_putchar(char c);
-size_t	ft_pf_strlen(const char *s);
-int		ft_printf(const char *format, ...);
 
 #endif
