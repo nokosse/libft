@@ -6,7 +6,7 @@
 #    By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 17:26:39 by kvisouth          #+#    #+#              #
-#    Updated: 2022/12/08 16:20:41 by kvisouth         ###   ########.fr        #
+#    Updated: 2023/01/13 19:45:59 by kvisouth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,13 @@ OBJS = $(SRCS:src/%.c=obj/%.o)
 RM	 = rm -rf
 AR	 = ar rcs
 
+all:
+	@echo -n "\n Compiling 0/$(words $(SRCS)) files"
+	@$(MAKE) $(NAME) | awk '{if(NR%2==1){printf "\033[31m\rCompiling %d/%d files\033[0m", NR, $(words $(SRCS))}} END {printf "\033[32m\rCompiling %d/%d files\033[0m\n", NR, NR}'
+	@echo "\033[32m>>>>>>> Done <<<<<<<<\n\033[0m"
+
 $(NAME): $(OBJS)
 	$(AR) $@ $^
-
-all: $(NAME)
 
 obj/%.o: src/%.c
 	@mkdir -p obj
@@ -31,8 +34,12 @@ obj/%.o: src/%.c
 clean:
 	$(RM) obj
 
-fclean: clean
-	$(RM) $(NAME) src/./a.out
+fclean:
+	@echo "\nRemoving files:\n"
+	@$(RM) obj
+	@echo "obj"
+	@$(RM) $(NAME)
+	@echo "$(NAME)\n"
 
 re: fclean all
 
